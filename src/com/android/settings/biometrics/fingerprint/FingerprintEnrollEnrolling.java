@@ -757,6 +757,9 @@ public class FingerprintEnrollEnrolling extends BiometricsEnrollEnrolling {
 
     @Override
     public void onEnrollmentError(int errMsgId, CharSequence errString) {
+        android.util.Log.e("PHH-Enroll", "heyo " + errMsgId + ", " + errString , new Exception());
+        if (errMsgId == 5) return;
+
         onCancelEnrollment(errMsgId);
     }
 
