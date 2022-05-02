@@ -235,6 +235,7 @@ public class FingerprintEnrollFindSensor extends BiometricEnrollBase implements
 
     @Override
     public void onEnrollmentError(int errMsgId, CharSequence errString) {
+	android.util.Log.e("PHH-Enroll", "heyo " + errMsgId + ", " + errString + ", " + mNextClicked, new Exception());
         if (mNextClicked && errMsgId == FingerprintManager.FINGERPRINT_ERROR_CANCELED) {
             mNextClicked = false;
             proceedToEnrolling(false /* cancelEnrollment */);
